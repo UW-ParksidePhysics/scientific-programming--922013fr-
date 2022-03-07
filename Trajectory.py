@@ -7,3 +7,4 @@ initial_height = 1.0  # m
 print(f'v0 = {initial_velocity:.1f} km/h')
 print(f'theta = {launch_angle:.0f} °')
 print(f'x = {initial_velocity:.1f} km/h')
+print(f'y0 = {initial_height:.1f} m')
