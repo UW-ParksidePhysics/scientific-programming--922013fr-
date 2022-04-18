@@ -38,23 +38,48 @@
 %semi major axis a = (1/2)*(ra + rp)
 
 %Graph
-a = 10;
-b = 5;
-
-thetas = (0:.1:2.*pi);
-for i = a
-    for j = b
-        xs = a.*cos(thetas);
-        ys = b.*sin(thetas);
-        plot(xs,ys)
-    end
-end
 
 
 % 
-url = 'https://nssdc.gsfc.nasa.gov/planetary/factsheet/'; 
-%data = webread(url); https://www.nasa.gov/audience/foreducators/k-4/features/F_Measuring_the_Distance_Student_Pages.html
-whos data
+% url = 'https://nssdc.gsfc.nasa.gov/planetary/factsheet/'; 
+% %data = webread(url); https://www.nasa.gov/audience/foreducators/k-4/features/F_Measuring_the_Distance_Student_Pages.html
+% whos data
+
+ra = 147300
+rp = 152100
+axes = calculate_elipse_semi_axes([ra,rp])
+plot_ellipse(axes)
+
+function semi_axes = calculate_elipse_semi_axes(apsides)
+    semi_major_axis = mean(apsides)
+    focal_length = 0.5*diff(apsides)
+    semi_minor_axis = sqrt(semi_major_axis^2 - focal_length^2)
+    semi_axes = [semi_major_axis,semi_minor_axis] 
+end 
+
+
+function ellipse_plot = plot_ellipse(semi_axes)
+    thetas = (0:.1:2.*pi);
+    xs = semi_axes(1).*cos(thetas);
+    ys = semi_axes(2).*sin(thetas);
+    plot(xs,ys)
+
+end
+
+%creates graph
+hold off
+scatter()
+plot(,)
+hold off
+xlabled('')
+ylabled('')
+legend("")
+
+
+
+
+
+
 
 
 
