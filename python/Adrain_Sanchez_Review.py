@@ -32,9 +32,8 @@ plt.plot(t, heights)
 % Does the code run without error? If any error occurs, can you suggest a potential fix?
 % The code runs without any error when tested on Matlab. 
 % How understandable is the output of the code? Point out any parts you do not understand.
-% I am not fully understanding the code because there is no description in the .m file but based on the output of 
-the code it looks like there is a measure with the increase of weight and velocity in regards to a pulley action 
-taking place. Other than that, I believe I could figure out what the output of the code is. 
+% I am not fully understanding the code because there is no description in the .py file but based on the output of 
+the code it looks like they are trying to plot time vs height. 
 % How readable is the code itself? Say where formatting or commenting would make the code more readable
 % The formatting and code itself is readable and is well organized. 
 % How clearly do the code comments describe the problem it is trying to solve? Identify places that would benefit from a clearer comment.
