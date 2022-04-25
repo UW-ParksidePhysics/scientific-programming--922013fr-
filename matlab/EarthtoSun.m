@@ -45,11 +45,19 @@
 % %data = webread(url); https://www.nasa.gov/audience/foreducators/k-4/features/F_Measuring_the_Distance_Student_Pages.html
 % whos data
 
-ra = 147300
-rp = 152100
-axes = calculate_elipse_semi_axes([ra,rp])
+apsides = [152100, 147300].*10^9
+axes = calculate_elipse_semi_axes(apsides)
+hold on
 plot_ellipse(axes)
-
+plot_sun(apsides)
+angles = [0,pi/2,pi,3*pi/2]
+labels = ["January","March","July","September"]
+for index = 1:length(angles)
+    position = [axes(1)*cos(angles(index)),axes(2)*sin(angles(index))]
+    plot_position(position)
+    text(position(1),position(2),labels(index),'fontsize',14)
+end
+hold off
 function semi_axes = calculate_elipse_semi_axes(apsides)
     semi_major_axis = mean(apsides)
     focal_length = 0.5*diff(apsides)
@@ -63,17 +71,25 @@ function ellipse_plot = plot_ellipse(semi_axes)
     xs = semi_axes(1).*cos(thetas);
     ys = semi_axes(2).*sin(thetas);
     plot(xs,ys)
+    xlim(1.2*semi_axes(1).*[-1,1])
+    ylim(1.2*semi_axes(2).*[-1,1])
+    xlabel('x (m)')
+    ylabel('y (m)')
 
 end
+function scatter_plot = plot_position(position)
+    point_size = 7^2
+    scatter(position(1),position(2),point_size,'filled')
+    
+   
+end 
 
-%creates graph
-hold off
-scatter()
-plot(,)
-hold off
-xlabled('')
-ylabled('')
-legend("")
+function sun = plot_sun(apsides)
+     focal_length = 0.5*diff(apsides)
+     sun_size = 6*7^2
+     scatter(focal_length,0,sun_size,'yellow','filled')
+     
+end
 
 
 
