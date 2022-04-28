@@ -68,20 +68,21 @@ def plot_label_postions(axes):
 # Simulation parameters
 # These are values particular to the simulation
 # that do not change later in the script
-# rp = apoapsis
+# rp = apoptosis
 
-# ra = periapsis
+# ra = periphrasis
 # Computed parameters (from simulation parameters)
-#	These are values that do not change later in the script
-#	and are calculated from formulas using the simulation parameters
+# These are values that do not change later in the script
+# and are calculated from formulas using the simulation parameters
 # Values: rp = 1 and ra=2 For the np.meantime
 
 # d = distance
 # Function calls and simple calculations for:
-#	data read-in
-#	simulation solution 
-#	visualization
-# The two points at which the code would read would be aphelion(152,100 km) and Perihelion(147,300 km). Moving in an orbital motion around the sun to find 2
+# data read-in
+# simulation solution
+# visualization
+# The two points at which the code would read would be aphelion(152,100 km) and Perihelion(147,300 km).
+# Moving in an orbital motion around the sun to find 2
 # more points.
 
 # Data read in would be the distances mentioned previosuly.
@@ -90,16 +91,15 @@ def plot_label_postions(axes):
 
 
 # Function definitions for simulation solution & visualization
-#	Each function contains help text: https://www.mathworks.com/help/matlab/matlab_prog/add-help-for-your-program.html
+# Each function contains help text: https://www.mathworks.com/help/matlab/matlab_prog/add-help-for-your-program.html
 # Focal Distance c = (1/2)*(ra - rp)
 
 # semi major axis a = (1/2)*(ra + rp)
 
 # Graph
 
-# url = 'https://nssdc.gsfc.nasa.gov/planetary/factsheet/'; 
-# #data = webread(url); https://www.nasa.gov/audience/foreducators/k-4/features/F_Measuring_the_Distance_Student_Pages.html
-# whos data
+# url = 'https://nssdc.gsfc.nasa.gov/planetary/factsheet/'; #data = webread(url);
+# https://www.nasa.gov/audience/foreducators/k-4/features/F_Measuring_the_Distance_Student_Pages.html whos data
 
 
 if __name__ == '__main__':
