@@ -1,7 +1,4 @@
 import numpy as np
-from scipy import stats
-
-
 def bivariate_statistics(data):
     if len(data) != 2 or len(data[0]) <= 1:
         raise IndexError("Inappropriate Dimensions")
