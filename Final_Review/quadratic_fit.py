@@ -21,4 +21,3 @@ if __name__ == "__main__":
     test_data = np.array([[0, 0], [1, 1], [2, 4]])
     coefficients = quadratic_fit(test_data)
     print(coefficients)
-
