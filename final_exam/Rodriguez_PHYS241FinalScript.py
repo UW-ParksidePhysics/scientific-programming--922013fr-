@@ -10,14 +10,12 @@ import matplotlib.pyplot as plt
 
 display_graph = True
 
-
 def parse_file_name(file_name):
     to_parse = file_name.split(".")
     symbol = to_parse[0]
     structure = to_parse[1]
     acronym = to_parse[2]
     return symbol, structure, acronym
-
 
 file_name = "Cu.Fm-3m.GGA-PBE.volumes_energies.dat"
 symbol, structure, acronym = parse_file_name(file_name)
@@ -35,7 +33,6 @@ fit_eos_curve, fit_parameters = fit_eos(array[0], array[1], quadratic_coefficien
                                         number_of_points=50)
 bulk_modulus = fit_parameters[1]
 equilibrium_volume = fit_parameters[3]
-
 
 def annotate_graph(symbol, structure):
     ax.annotate(symbol, xy=(130, 0.001))
@@ -56,10 +53,8 @@ def annotate_graph(symbol, structure):
     plt.title("{} Equation of State for {} in DFT {}".format('birch-murrain', symbol, acronym))
     return ax, plt
 
-
 fig = plt.figure()
 ax = fig.add_subplot(111)
-
 
 volumes = linspace(min(array_2[0]), max(array_2[0]), len(fit_eos_curve))
 line1, = ax.plot(array_2[0], array_2[1], 'o')
@@ -93,7 +88,6 @@ from lowest_eigenvectors import lowest_eigenvectors
 from numpy import linspace
 import matplotlib.pyplot as plt
 
-
 display_graph = False
 potential_name = 'square'
 N_dim = 130
@@ -115,7 +109,6 @@ plt.axis([-10, 10, max(eigenvectors[0]) - 2, max(eigenvectors[0]) + 2])
 plt.axhline(color="black")
 plt.text(-9.5, -1.75, "Created by Francisco Rodriguez 2021/05/12")
 plt.title("Select Wave functions for a Square Potential on a scale grid of 1, 2, 3 points")
-
 
 if display_graph:
     plt.show()
