@@ -100,24 +100,24 @@ N_dim = 130
 potential_parameter = 200
 
 matrix = generate_matrix(-10, 10, N_dim, potential_name, potential_parameter)
-#print(matrix)
+
 eigenvalues, eigenvectors = lowest_eigenvectors(matrix, 3)
 
 x = linspace(-10, 10, N_dim)
-line1, = plt.plot(x, eigenvectors[0][0:N_dim])
-line2, = plt.plot(x, eigenvectors[1][0:N_dim])
-line3, = plt.plot(x, eigenvectors[2][0:N_dim])
+line1, = plt.plot(x, eigenvectors[1][0:N_dim])
+line2, = plt.plot(x, eigenvectors[2][0:N_dim])
+line3, = plt.plot(x, eigenvectors[3][0:N_dim])
 
 plt.xlabel("x [a.u.]")
 plt.ylabel("ψ n ( x ) [a.u.]")
 plt.legend((line1, line2, line3), ('ψ1, Ε1 = 0.62414396 a.u.', 'ψ2, Ε2 = 0.87335307 a.u.', 'ψ3, Ε3 = 1.12229893 a.u.'))
 plt.axis([-10, 10, max(eigenvectors[0]) - 2, max(eigenvectors[0]) + 2])
 plt.axhline(color="black")
-plt.text(-9.5, -1.75, "Created by Peter Kveton 2021/05/12")
-plt.title("Select Wavefunctions for a Harmonic Potential on a Spatial Grid of 0, 1, 2 Points")
+plt.text(-9.5, -1.75, "Created by Francisco Rodriguez 2021/05/12")
+plt.title("Select Wave functions for a Square Potential on a scale grid of 1, 2, 3 points")
 
 
 if display_graph:
     plt.show()
 elif not display_graph:
-    plt.savefig("Kveton.harmonic.Eigenvector0, 1, 2.png")
+    plt.savefig("frodriguez.harmonic.Eigenvector1, 2, 3.png")
