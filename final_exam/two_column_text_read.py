@@ -12,7 +12,7 @@ def two_column_text_read(file_name):
     """
     try:
         data = np.loadtxt(file_name)
-        return data
+        return data.transpose()
     except OSError:
         print(f"{file_name} cannot be found")
 
