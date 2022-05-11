@@ -69,7 +69,7 @@ def annotate_graph(axes, symbol, structure, bulk_modulus, equilibrium_volume, da
                   xy=(115, -0.001))
 
     graph_y_range = y_max - y_min
-    vertical_line_y_max = 1.3 * (data_extremes[2] - y_min) / graph_y_range
+    vertical_line_y_max = 1.2 * (data_extremes[2] - y_min) / graph_y_range
     plt.axvline(x=equilibrium_volume, ymax=vertical_line_y_max, color="black", linestyle='--')
 
     plt.text(91, -0.0025, "Created by Francisco Rodriguez 2022-05-09")
