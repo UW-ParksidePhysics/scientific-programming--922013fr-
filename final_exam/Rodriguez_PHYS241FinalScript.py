@@ -1,14 +1,11 @@
-import numpy as np
+import matplotlib.pyplot as plt
 
-from convert_units import convert_units
+from bivariate_statistics import bivariate_statistics
 from equations_of_state import fit_eos
 from fit_curve_array import fit_curve_array
 from plot_data_with_fit import plot_data_with_fit
 from quadratic_fit import quadratic_fit
-from bivariate_statistics import bivariate_statistics
 from two_column_text_read import two_column_text_read
-import matplotlib.pyplot as plt
-from numpy import linspace
 
 display_graph = True
 potential_name = 'square'
